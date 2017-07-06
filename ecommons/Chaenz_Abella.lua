@@ -1,11 +1,13 @@
+--!quest|wayfarersemblem
 function event_say(e)
 	local instance_id_list = {["rujg"] = 50, ["rujd"] = 50};
 	local inst_name;
-	
+	--!ignore
   if (e.other:HasItem(41000) or e.other:HasItem(40999)) then 
     if (e.message:findi('hail')) then
       e.self:Say("Greetings, " .. e.other:GetName() .. "! Such hustle and bustle about, it's amazing how far the Wayfarer's Brotherhood has come in such a short time! I've been charged with welcoming new recruits while Morden is off exploring. In the meantime, I've got to focus on my duties. As always we could use stalwart lads and lasses to help us with our adventuring!  If you can rally the call of your friends perhaps you can help us with a serious [" .. eq.say_link('problem', false, 'problem') .. "].  I can also show you how to abandon your [" .. eq.say_link("expedition",false,"expedition") .. "]");
-
+	--!end
+	--!quest|wayfarersemblem
     elseif (e.message:findi('problem')) then
       e.self:Say("Our scout, Nevlen, just got back from the Rujarkian Hills after looking into a rumor of a huge stockpile of ill-gotten orcish treasure. He and his companion Crispen discovered that the rumor was true! We want to go back in and search for more of the treasure, but we have been told the orcs may be waiting for our arrival. We need to you get down there quickly to gather more samples from their stores before they move them!  Are you [" .. eq.say_link('interested', false, 'interested') .. "]?");
       

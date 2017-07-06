@@ -24,12 +24,13 @@ sub EVENT_SAY
 
 sub EVENT_ITEM 
 { 
+	#!quest|soulfire|6
 	# Check for "A Note (Note To Altunic)".
 	if(plugin::check_handin(\%itemcount, 18896 => 1))
 	{
 		quest::say("You are the one they have sent? A squire?!! I hope you can help me. I gather items strewn upon the grounds of the Commonlands. I sell them at good prices. Lately, I have been terrorized by a human rogue named Narl. He will no doubt appear at my [house] soon. Bring his head to me.");
 	}
-
+	#!quest|soulfire|7
 	if(plugin::check_handin(\%itemcount, 13867 => 1))
 	{
 		quest::say("You have performed a great service to me, but I fear others will attack me while I stroll the countryside. It would be very noble of you to fetch me a cloth shirt for protection from wicked creatures. It is not much, but it will help.");
@@ -43,7 +44,7 @@ sub EVENT_ITEM
 		# Knights of Truth Faction
 		quest::faction(184,1);
 	}
-
+	#!quest|soulfire|8
 	if(plugin::check_handin(\%itemcount, 1004 => 1))
 	{
 		quest::say("Thank you. You are very noble for a squire. I can see you becoming a very valuable asset to the Hall of Truth. Take this token. Tell Merko that you have [earned the Token of Generosity].");

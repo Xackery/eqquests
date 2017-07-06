@@ -1,5 +1,5 @@
 -- ecommons\Magus_Zeir.lua NPCID 22114
-
+--!quest|magus|1
 function event_say(e)
 	if(e.other:KeyRingCheck(41000) or e.other:HasItem(41000)) then
 		if(e.message:findi("hail")) then

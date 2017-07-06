@@ -1,3 +1,15 @@
+#!quest|trickortreat|1
+#!reward|84091
+#!reward|84092
+#!reward|84093
+#!reward|84088
+#!reward|84088
+#!reward|84088
+#!reward|84088
+#!reward|84088
+#!reward|84088
+#!reward|84088
+#!ignore
 sub EVENT_SPAWN {
   quest::settimer("ec_Ragus", 45);
 }

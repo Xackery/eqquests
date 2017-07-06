@@ -21,6 +21,7 @@ sub EVENT_SAY {
         $client->Message(15, "You have completed a step toward becoming a great adventurer. Well done!");
         quest::say("Our brilliant magi use a special kind of magic to help teleport us between camps. What is it called?");
       }
+      #!quest|adventuerestone|1
       if ($text=~/farstone/i) {
         $client->Message(15, "You have completed a step toward becoming a great adventurer. Well done!");
         quest::say("Congratulations! I believe now that you are trustworthy enough to take on some of the adventures the Wayfarers Brotherhood have to give. We will be able to continue with our discussions once you complete some adventures. We can also help you with travel between our camps. Be well, fair $name. I'm sure, someday, you will be a great addition to the Wayfarers Brotherhood.");
@@ -32,6 +33,7 @@ sub EVENT_SAY {
       }
     }
     elsif (defined($qglobals{Wayfarer}) && ($qglobals{Wayfarer} == 2)) { #PC is ready for Adventurer's Stone
+      #!ignore
       if (!plugin::check_hasitem($client,41000)) { #PC does not have an Adventurer's Stone
         quest::say("Take this Adventurer Stone with you on your journeys into the dungeons. You will find it useful. Should you lose it somehow, come talk to me and I'll replace it.");
         quest::summonitem(41000); #Adventurer's Stone
@@ -291,6 +293,8 @@ sub EVENT_SAY {
       quest::say("Well, I must say I'm impressed! You know as much as the Wayfarers Brotherhood about these dungeons that have been uncovered. Nicely done, $name!"); #text copied from Vual's completed MMC line until we know what it should be
     }
     elsif (defined($qglobals{Wayfarer}) && ($qglobals{Wayfarer} == 4) && !plugin::check_hasitem($client, 40999)) { #PC has earned Wayfarers Brotherhood Emblem
+    #!end
+    #!quest|wayfarersemblem
       quest::say("I see you may have lost or misplaced your emblem. Here, take this replacement."); #Text made up
       quest::summonitem(40999); #Wayfarers Brotherhood Emblem
     }

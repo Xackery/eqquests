@@ -1,3 +1,4 @@
+--!ignore
 function event_say(e)
 	local instance_id_list = {["rujg"] = 50, ["rujd"] = 50};
 	local inst_name;
